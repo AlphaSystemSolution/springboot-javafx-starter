@@ -1,9 +1,13 @@
 package com.alphasystem.bootfx.starter.application;
 
 import javafx.application.Application;
+import javafx.application.Preloader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import com.alphasystem.morphologicalanalysis.ui.application.AppPreloader;
+import com.sun.javafx.application.LauncherImpl;
 
 /**
  * @author sali
@@ -25,8 +29,12 @@ public abstract class AbstractJavaFxApplicationSupport extends Application {
         applicationContext.close();
     }
 
+    protected void hidePreloader(){
+        notifyPreloader(new Preloader.StateChangeNotification(Preloader.StateChangeNotification.Type.BEFORE_START));
+    }
+
     protected static void launchApp(Class<? extends AbstractJavaFxApplicationSupport> appClass, String[] args) {
         AbstractJavaFxApplicationSupport.savedArgs = args;
-        Application.launch(appClass, args);
+        LauncherImpl.launchApplication(appClass, AppPreloader.class, args);
     }
 }
