@@ -14,8 +14,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.3.4.RELEASE'
-    implementation 'org.hibernate.validator:hibernate-validator:6.1.6.Final'
+    compile 'org.springframework.boot:spring-boot-starter:2.3.4.RELEASE'
+    compile 'org.hibernate.validator:hibernate-validator:6.1.6.Final'
 }
 
 group = 'com.alphasystem.spring-javafx.boot'
