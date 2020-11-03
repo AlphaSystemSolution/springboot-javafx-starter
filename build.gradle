@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter:2.3.4.RELEASE'
+    compile 'com.alphasystem.arabic:morphological-analysis-ui-preloader:4.0.0-SNAPSHOT'
     compile 'org.hibernate.validator:hibernate-validator:6.1.6.Final'
 }
 

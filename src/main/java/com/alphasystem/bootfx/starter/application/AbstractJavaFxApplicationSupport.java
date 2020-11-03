@@ -6,7 +6,7 @@ import javafx.application.Preloader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-// import com.alphasystem.morphologicalanalysis.ui.application.AppPreloader;
+import com.alphasystem.morphologicalanalysis.ui.application.AppPreloader;
 import com.sun.javafx.application.LauncherImpl;
 
 /**
@@ -35,7 +35,6 @@ public abstract class AbstractJavaFxApplicationSupport extends Application {
 
     protected static void launchApp(Class<? extends AbstractJavaFxApplicationSupport> appClass, String[] args) {
         AbstractJavaFxApplicationSupport.savedArgs = args;
-        // LauncherImpl.launchApplication(appClass, AppPreloader.class, args);
-        LauncherImpl.launchApplication(appClass, args);
+        LauncherImpl.launchApplication(appClass, AppPreloader.class, args);
     }
 }
